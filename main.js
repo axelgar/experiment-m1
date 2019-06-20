@@ -2,7 +2,7 @@
 
 function main() {
   var rootElement = document.querySelector('#root');
-  var layout = null;
+  var layout      = null;
   var ENTRY_POINT = '/'
 
   layout = generateLayoutComponent();
@@ -14,11 +14,11 @@ function main() {
   links.forEach((link) => {
     link.addEventListener('click', (event) => {
       layout.generatePage(event.target.attributes.url.nodeValue);
-    })
+    });
   });
 
   function generateLayoutComponent() {
-    var layoutElement = new Layout(rootElement)
+    var layoutElement = new Layout(rootElement);
     layoutElement.generateLayout();
     layoutElement.render();
     layoutElement.getMainElements();
@@ -26,4 +26,4 @@ function main() {
   };
 };
 
-window.addEventListener('load', main)
+window.addEventListener('load', main);
