@@ -17,7 +17,7 @@ Movies.prototype.generateElements = function() {
       <a href="#0" onclick="return async function() {
         var page = new Page('/movies/details');
         page.mainContainer = document.querySelector('main');
-        page.movieId = '?search=${movie.title}';
+        page.movieTitle = '?search=${movie.title}';
         await page.generatepageBasedOnUrl();
         page.render();
       }()">See more bout the film ...</a>

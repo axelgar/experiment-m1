@@ -1,10 +1,10 @@
 function Layout(rootElement) {
-  this.rootElement = rootElement;
+  this.rootElement    = rootElement;
   this.layoutElements = null;
-  this.page = null;
-  this.header = null;
-  this.main = null;
-  this.footer = null;
+  this.page           = null;
+  this.header         = null;
+  this.main           = null;
+  this.footer         = null;
 };
 
 Layout.prototype.generateLayout = function() {
@@ -18,7 +18,7 @@ Layout.prototype.generateLayout = function() {
 
 Layout.prototype.getMainElements = function() {
   this.header = document.querySelector('#site-header');
-  this.main = document.querySelector('#site-main');
+  this.main   = document.querySelector('#site-main');
   this.footer = document.querySelector('#site-footer');
 };
 

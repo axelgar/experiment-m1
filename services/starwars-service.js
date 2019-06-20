@@ -1,10 +1,12 @@
+'use strict';
+
 function StarWarsService() {
   this.baseUrl = 'https://swapi.co/api';
 };
 
 StarWarsService.prototype.getAllMovies = async function() {
   try {
-    var data = await fetch(`${this.baseUrl}/films/`);
+    var data     = await fetch(`${this.baseUrl}/films/`);
     var allFilms = await data.json();
     return allFilms.results;
   }
@@ -15,7 +17,7 @@ StarWarsService.prototype.getAllMovies = async function() {
 
 StarWarsService.prototype.getOneFilm = async function(filmId) {
   try {
-    var data = await fetch(`${this.baseUrl}/films/${filmId}`);
+    var data     = await fetch(`${this.baseUrl}/films/${filmId}`);
     var oneMovie = await data.json();
     return oneMovie;
   }
@@ -24,4 +26,4 @@ StarWarsService.prototype.getOneFilm = async function(filmId) {
   }
 };
 
-var starWarsApi = new StarWarsService();
+var starWarsApiService = new StarWarsService();

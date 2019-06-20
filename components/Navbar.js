@@ -1,3 +1,5 @@
+'use strcit';
+
 function Navbar(headerContainer) {
   this.headerContainer = headerContainer;
   this.navbarEelements = null;
