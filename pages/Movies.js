@@ -1,7 +1,7 @@
 'use strict';
 
 function Movies(movies) {
-  this.movies = movies;
+  this.movies       = movies;
   this.pageElements = null;
 }
 
@@ -10,6 +10,9 @@ Movies.prototype.handleClick = function() {
 }
 
 Movies.prototype.generateElements = function() {
+  this.movies.sort(function(movie1, movie2) {
+    return movie1.episode_id - movie2.episode_id
+  })
   this.pageElements = this.movies.map(function(movie) {
     return (`
     <div class="movie-card"> 
@@ -20,7 +23,7 @@ Movies.prototype.generateElements = function() {
       <a href="#0" onclick="return async function(event) {
         var page = new Page('/movies/details');
         page.mainContainer = document.querySelector('main');
-        page.movieId = ${movie.episode_id};
+        page.movieId = '?search=${movie.title}';
         await page.generatepageBasedOnUrl();
         page.render();
       }()">See more bout the film ...</a>

@@ -1,7 +1,7 @@
 'use strict';
 
 function Loading() {
-  this.isLoading = true;
+  this.isLoading       = true;
   this.loadingElements = null;
 };
 

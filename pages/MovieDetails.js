@@ -1,7 +1,7 @@
 'use strict';
 
 function MovieDetails(movie) {
-  this.movie = movie;
+  this.movie        = movie;
   this.pageElements = null;
 }
 

@@ -1,24 +1,25 @@
 'use strict';
 
 function Page(url, mainContainer) {
-  this.url = url;
-  this.mainContainer = mainContainer;
-  this.page = null;
-  this.movies = null;
-  this.movie = null;
+  this.url              = url;
+  this.mainContainer    = mainContainer;
+  this.page             = null;
+  this.movies           = null;
+  this.movie            = null;
+  this.movieId          = null;
   this.loadingComponent = new Loading();
-  this.movieId = null;
 }
 
 Page.prototype.generateMoviesPage = async function() {
   this.movies = await starWarsApi.getAllMovies();
-  this.page = new Movies(this.movies, this.mainContainer);
+  this.page   = new Movies(this.movies, this.mainContainer);
   this.page.generateElements();
 }
 
 Page.prototype.generateDetailsMoviePage = async function() {
-  this.movie = await starWarsApi.getOneFilm(this.movieId);
-  this.page = new MovieDetails(this.movie);
+  var response = await starWarsApi.getOneFilm(this.movieId);
+  this.movie   = response.results[0];
+  this.page    = new MovieDetails(this.movie);
   this.page.generateElements();
 }
 
