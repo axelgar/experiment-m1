@@ -3,15 +3,25 @@ function StarWarsService() {
 }
 
 StarWarsService.prototype.getAllMovies = async function() {
-  var data = await fetch(`${this.baseUrl}/films/`);
-  var allFilms = await data.json();
-  return allFilms.results;
+  try {
+    var data = await fetch(`${this.baseUrl}/films/`);
+    var allFilms = await data.json();
+    return allFilms.results;
+  }
+  catch(error) {
+    console.error(error)
+  }
 }
 
 StarWarsService.prototype.getOneFilm = async function(filmId) {
-  var data = await fetch(`${this.baseUrl}/films/${filmId}`);
-  var oneMovie = await data.json();
-  return oneMovie;
+  try {
+    var data = await fetch(`${this.baseUrl}/films/${filmId}`);
+    var oneMovie = await data.json();
+    return oneMovie;
+  }
+  catch(error) {
+    console.error(error)
+  }
 }
 
 var starWarsApi = new StarWarsService();
