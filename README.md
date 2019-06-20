@@ -1,5 +1,5 @@
 
-# Expermient for project
+# Experiment for project M1
 
 #### This is an experiment with the main goal of having a better understanding of React.js once the student gets to the third module and be able to practice CSS in depth. 
 
