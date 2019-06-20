@@ -36,10 +36,10 @@ Page.prototype.generatepageBasedOnUrl = async function() {
   this.loadingComponent.generateElements();
   this.mainContainer.innerHTML = this.loadingComponent.loadingElements;
   switch(this.url) {
-    case 'Home':
+    case '/':
       this.generateHomePage();
       break;
-    case 'Movies':
+    case '/movies':
       await this.generateMoviesPage();
       break;
     case '/movies/details':

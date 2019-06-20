@@ -3,7 +3,7 @@
 function main() {
   var rootElement = document.querySelector('#root');
   var layout = null;
-  var ENTRY_POINT = 'Home'
+  var ENTRY_POINT = '/'
 
   layout = generateLayoutComponent();
   layout.generateNavbar();
@@ -13,10 +13,9 @@ function main() {
 
   links.forEach((link) => {
     link.addEventListener('click', (event) => {
-      layout.generatePage(event.target.innerText);
+      layout.generatePage(event.target.attributes.url.nodeValue);
     })
   });
-  //TODO ------ Add Footer
 
   function generateLayoutComponent() {
     var layoutElement = new Layout(rootElement)

@@ -9,13 +9,13 @@ Navbar.prototype.generateNavbar = function() {
     <nav>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a href="#" url="/">Home</a>
         </li>
         <li>
-          <a href="#">Movies</a>
+          <a href="#" url="/movies">Movies</a>
         </li>
         <li>
-          <a href="#">Species</a>
+          <a href="#" url="/species">Species</a>
         </li>
       </ul>
     </nav>
