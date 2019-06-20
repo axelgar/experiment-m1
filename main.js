@@ -5,7 +5,7 @@ function main() {
   var layout = null;
   var ENTRY_POINT = 'Home'
 
-  layout = generateLayout();
+  layout = generateLayoutComponent();
   layout.generateNavbar();
   layout.generatePage(ENTRY_POINT);
 
@@ -18,7 +18,7 @@ function main() {
   });
   //TODO ------ Add Footer
 
-  function generateLayout() {
+  function generateLayoutComponent() {
     var layoutElement = new Layout(rootElement)
     layoutElement.generateLayout();
     layoutElement.render();
