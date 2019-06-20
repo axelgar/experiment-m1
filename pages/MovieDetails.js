@@ -6,7 +6,6 @@ function MovieDetails(movie) {
 }
 
 MovieDetails.prototype.generateElements = function() {
-  console.log(this.movie);
   this.pageElements = `
     <h1>${this.movie.title}</h1>
     <p>${this.movie.director}</p>

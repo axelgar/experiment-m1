@@ -13,10 +13,10 @@ Movies.prototype.generateElements = function() {
   this.pageElements = this.movies.map(function(movie) {
     return (`
     <div class="movie-card"> 
-      <h3>${movie.title}<h3>
-      <p>${movie.release_date}<p>
-      <p>${movie.director}<p>
-      <p>${movie.producer}<p>
+      <h3>${movie.title}</h3>
+      <p>${movie.release_date}</p>
+      <p>${movie.director}</p>
+      <p>${movie.producer}</p>
       <a href="#0" onclick="return async function(event) {
         var page = new Page('/movies/details');
         page.mainContainer = document.querySelector('main');
