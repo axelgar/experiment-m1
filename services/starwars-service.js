@@ -1,6 +1,6 @@
 function StarWarsService() {
-  this.baseUrl = 'https://swapi.co/api'
-}
+  this.baseUrl = 'https://swapi.co/api';
+};
 
 StarWarsService.prototype.getAllMovies = async function() {
   try {
@@ -11,7 +11,7 @@ StarWarsService.prototype.getAllMovies = async function() {
   catch(error) {
     console.error(error)
   }
-}
+};
 
 StarWarsService.prototype.getOneFilm = async function(filmId) {
   try {
@@ -22,6 +22,6 @@ StarWarsService.prototype.getOneFilm = async function(filmId) {
   catch(error) {
     console.error(error)
   }
-}
+};
 
 var starWarsApi = new StarWarsService();
