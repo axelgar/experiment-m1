@@ -1,7 +1,6 @@
 function Layout(rootElement) {
   this.rootElement    = rootElement;
   this.layoutElements = null;
-  this.page           = null;
   this.header         = null;
   this.main           = null;
   this.footer         = null;
@@ -21,12 +20,6 @@ Layout.prototype.getMainElements = function() {
   this.main   = document.querySelector('#site-main');
   this.footer = document.querySelector('#site-footer');
 };
-
-Layout.prototype.generatePage = async function(url) {
-  this.page = new Page(url, this.main);
-  await this.page.generatepageBasedOnUrl();
-  this.page.render();
-}
 
 Layout.prototype.generateNavbar = function() {
   var navbar = new Navbar(this.header);

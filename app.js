@@ -7,15 +7,22 @@ function main() {
 
   layout = generateLayoutComponent();
   layout.generateNavbar();
-  layout.generatePage(ENTRY_POINT);
-
   var links = document.querySelectorAll('nav a');
+  
+  activateRouter(ENTRY_POINT);
 
   links.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      layout.generatePage(event.target.attributes.url.nodeValue);
+    link.addEventListener('click', function(event) {
+      activateRouter(event.target.attributes.url.nodeValue)
     });
   });
+
+  async function activateRouter(url) {
+    router.url = url;
+    router.mainContainer = layout.main;
+    await router.generatepageBasedOnUrl();
+    router.render();
+  }
 
   function generateLayoutComponent() {
     var layoutElement = new Layout(rootElement);

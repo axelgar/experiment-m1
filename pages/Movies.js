@@ -15,11 +15,11 @@ Movies.prototype.generateElements = function() {
       <p>${movie.director}</p>
       <p>${movie.producer}</p>
       <a href="#0" onclick="return async function() {
-        var page = new Page('/movies/details');
-        page.mainContainer = document.querySelector('main');
-        page.movieTitle = '?search=${movie.title}';
-        await page.generatepageBasedOnUrl();
-        page.render();
+        router.url = '/movies/details';
+        router.mainContainer = document.querySelector('main');
+        router.movieTitle = '?search=${movie.title}';
+        await router.generatepageBasedOnUrl();
+        router.render();
       }()">See more bout the film ...</a>
     </div>
   `)
