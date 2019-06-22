@@ -28,11 +28,6 @@ Router.prototype.generatepageBasedOnUrl = async function() {
   };
 };
 
-Router.prototype.render = function() {
-  this.page.generateElements();
-  this.mainContainer.innerHTML = this.page.pageElements;
-};
-
 Router.prototype.generateHomePage = function() {
   this.page = new Home();
 };
@@ -49,9 +44,13 @@ Router.prototype.generateMoviesPage = async function() {
 };
 
 Router.prototype.generateDetailsMoviePage = async function() {
-  var response = await starWarsApiService.getOneFilm(this.movieTitle);
-  this.movie   = response.results[0];
+  this.movie = await starWarsApiService.getOneFilm(this.movieTitle);
   this.page    = new MovieDetails(this.movie);
+};
+
+Router.prototype.render = function() {
+  this.page.generateElements();
+  this.mainContainer.innerHTML = this.page.pageElements;
 };
 
 var router = new Router();

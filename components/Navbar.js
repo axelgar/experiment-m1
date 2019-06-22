@@ -1,4 +1,4 @@
-'use strcit';
+'use strict';
 
 function Navbar(headerContainer) {
   this.headerContainer = headerContainer;
