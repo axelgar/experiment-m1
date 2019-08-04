@@ -4,6 +4,7 @@
 #### This is an experiment with the main goal of having a better understanding of React.js once the student gets to the third module and be able to practice more CSS.
 
 Main advantages:
+
 - Start to see the website as a group of objects (components) that can be reused.
 
 - Practice object oriented programming.
